@@ -62,16 +62,16 @@ def inlinequery(update: Update, _) -> None:
             "keyboard": ".spb ",
         },
         {
-            "title": "Account info on Yuii",
-            "description": "Look up a Telegram account in Yuii database",
-            "message_text": "Click the button below to look up a person in Yuii database using their Telegram ID",
+            "title": "Account info on Kotone",
+            "description": "Look up a Telegram account in Kotone database",
+            "message_text": "Click the button below to look up a person in Kotone database using their Telegram ID",
             "thumb_urL": "https://telegra.ph/file/145c818a6b4e5bc92765d.jpg",
             "keyboard": ".info ",
         },
         {
             "title": "About",
-            "description": "Know about Yuii",
-            "message_text": "Click the button below to get to know about Yuii.",
+            "description": "Know about Kotone",
+            "message_text": "Click the button below to get to know about Kotone.",
             "thumb_urL": "https://telegra.ph/file/145c818a6b4e5bc92765d.jpg",
             "keyboard": ".about ",
         },
@@ -154,10 +154,10 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     nation_level_present = False
 
     if user.id == OWNER_ID:
-        text += f"\n\nThis person is my master"
+        text += f"\n\nThis person is my Hubby"
         nation_level_present = True
     elif user.id in DEV_USERS:
-        text += f"\n\nThis Person is a part of Yuii Chan Club"
+        text += f"\n\nThis Person is my Brother"
         nation_level_present = True
     elif user.id in SUDO_USERS:
         text += f"\n\nThis person is a sudo user"
@@ -173,7 +173,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
         nation_level_present = True
 
     if nation_level_present:
-        text += '[<a href="https://t.me/yuiichansupport/3655">?</a>]'.format(
+        text += '[<a href="https://t.me/Kotonesupport">?</a>]'.format(
             bot.username
         )
 
@@ -195,7 +195,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Report Error",
-                    url=f"https://t.me/yuiichansupport",
+                    url=f"https://t.me/Kotonesupport",
                 ),
                 InlineKeyboardButton(
                     text="Search again",
@@ -226,8 +226,8 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    Yuii (@{context.bot.username})
-    Maintained by [Rshero](t.me/rshero)
+    Kotone (@{context.bot.username})
+    Maintained by [Jean](t.me/Zenko_0)
     Built with ❤️ using python-telegram-bot v{str(__version__)}
     Running on Python {python_version()}
     """
@@ -237,7 +237,7 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Support",
-                    url=f"https://t.me/yuiichansupport",
+                    url=f"https://t.me/Kotonesupport",
                 )
             ]
         ]
@@ -246,7 +246,7 @@ def about(query: str, update: Update, context: CallbackContext) -> None:
     results.append(
         InlineQueryResultArticle(
             id=str(uuid4()),
-            title=f"About Yuii (@{context.bot.username})",
+            title=f"About Kotone (@{context.bot.username})",
             input_message_content=InputTextMessageContent(
                 about_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
             ),
@@ -324,7 +324,7 @@ def spb(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Report Error",
-                    url=f"https://t.me/yuiichansupport",
+                    url=f"https://t.me/Kotonesupport",
                 ),
                 InlineKeyboardButton(
                     text="Search again",
@@ -475,7 +475,7 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
                 [
                     InlineKeyboardButton(
                         text="Report error",
-                        url="t.me/yuiichansupport",
+                        url="t.me/Kotonesupport",
                     ),
                     InlineKeyboardButton(
                         text="Search again",
